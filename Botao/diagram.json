@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -1.14,
+      "left": -3.1,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "wokwi-led", "id": "led1", "top": -42, "left": -25, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn1",
+      "top": 0.5,
+      "left": 70.7,
+      "rotate": 90,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.2", "led1:C", "black", [ "v0" ] ],
+    [ "esp:21", "led1:A", "black", [ "v-38.4", "h-9.6" ] ],
+    [ "btn1:2.l", "esp:GND.3", "white", [ "h-48.4", "v57.6" ] ],
+    [ "btn1:1.r", "esp:0", "white", [ "h19.2", "v29.6" ] ]
+  ],
+  "dependencies": {}
+}
